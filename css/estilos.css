@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Kanit:wght@600&display=swap");
+:root {
+  --bs-body-bg: #c2c1be;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Kanit", sans-serif;
+}
+
+.carousel-control-next-icon {
+  background-image: url(../imagenes/right.png);
+}
+
+.carousel-control-prev-icon {
+  background-image: url(../imagenes/left.png);
+}
+
+.img-4 {
+  width: 360px;
+  height: 380px;
+}
+
+.img-5 {
+  width: 400px;
+  height: 380px;
+}
+
+footer {
+  width: 100%;
+  height: 50vh;
+  background-color: #a6a6a6;
+}
+
+.text-decoration-none {
+  color: black;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: auto;
+  }
+}/*# sourceMappingURL=estilos.css.map */

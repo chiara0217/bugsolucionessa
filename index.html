@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--link de bootstrap iconografía-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!--vinculación de icomoon-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--css de Bosstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!--mi css-->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <!--link a lightbox para la librería-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+
+    <title>Bug Soluciones</title>
+
+</head>
+
+<body>
+
+    <!-- Menú -->
+    <nav class="navbar navbar-expand-md fixed-top bg-dark" data-bs-theme="dark">
+        <div class="container-fluid col-8">
+
+            <a class="navbar-brand" href="#">
+                <img src="imagenes/logo.jpg" alt="Bootstrap" width="30"> BUG
+            </a> <!--logo anidado al vínculo que nos lleva al index-->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#desplegable" a>
+                <span class="navbar-toggler-icon"></span> <!--ícono librito-->
+            </button> <!--botón de despliegue-->
+
+            <!-- pongo un margin start-auto para que esos elementos estén a la derecha-->
+            <div class="collapse navbar-collapse ms-md-auto" id="desplegable">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown ms-md-auto">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Contacto
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#miModal"> Cómo
+                                    contactarnos </button></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--cierro nav-->
+
+    <!-- logo (MENÚ); sacar íconos de Boostrap con el link a la iconografía en el head -->
+
+    <!-- abro modal -->
+    <div class="modal fade" id="miModal" tabindex="-1"> <!--el -1 es para que no se vea al principio-->
+        <div class="modal-dialog modal-xl modal-fullscreeen-lg-down">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title h6" id="miModal">Completá con tus datos</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+
+
+                    <!--coloco formulario-->
+                    <form action="php/codigo.php" method="post" class="needs-validation" novalidate>
+
+
+                        <div class="row justify-content-center">
+
+                            <div class="col-md-5">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" required class="form-control" id="nombre" name="nombre">
+                                <div class="invalid-feedback">Ojo con el campo</div>
+                            </div> <!--primera columna formulario-->
+
+                            <div class="col-md-5">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" required class="form-control" name="email" id="email">
+                                <div class="invalid-feedback">Ojo con el campo</div>
+                            </div> <!--segunda columna formulario-->
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+                                <label for="comentarios" pattern="[a-zA-Z0-9]{5,30}"
+                                    class="form-label">Comentarios</label>
+
+                                <textarea name="comentarios" required class="form-control" id="comentarios"></textarea>
+                                <div class="invalid-feedback">Ojo con el campo</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row justify-content-end mt-2">
+                            <div class="col-12">
+                                <button class="btn btn-outline-success">Enviar</button>
+                                <!--le pongo un mt al botón para que no esté tan pegado-->
+                            </div>
+                        </div>
+
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div> <!--cierro modal-->
+
+
+
+    <header>
+
+        <!--div de Boostrap-->
+        <div id="nuevoSlider" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#nuevoSlider" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#nuevoSlider" data-bs-slide-to="1"></button>
+            </div> <!--cierra indicadores-->
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imagenes/img1.jpg" class="d-block w-100 mx-0" alt="foto1">
+                </div><!--primera imagen-->
+
+                <div class="carousel-item">
+                    <img src="imagenes/img2.jpg" class="d-block w-100 mx-0" alt="foto2">
+                </div> <!--segunda imagen-->
+            </div> <!--cierra carousel inner-->
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#nuevoSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Prev</span>
+            </button> <!--flecha de la izquierda-->
+
+            <button class="carousel-control-next" type="button" data-bs-target="#nuevoSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button> <!--flecha de la derecha-->
+        </div>
+
+        <!-- cierro div de Boostrap Carousel -->
+
+    </header>
+
+    <main>
+
+        <div class="container-fluid col-8">
+            <!-- uso class container para todo que todo el main me quede alineado con col-8 al igual que el nav -->
+
+            <div class="container my-5 py-5">
+                <!-- h1 a la izq -->
+                <h1 class="display-5">Bug Soluciones SA <br> Servicio de CCTV</h1>
+                <!-- p a la izq -->
+                <p>Somos una empresa que ofrece servicios de cctv. Trabajamos en conjunto para satisfacer las
+                    necesidades del cliente.</p>
+
+            </div>
+
+            <div class="row text-center mb-5 mt-4 pb-5 pt-4">
+                <section class="col-sm">
+                    <h4 class="text-uppercase">HikVision</h4>
+                    <p>Utilizamos los mejores productos del mercado para nuestros mejores clientes.</p>
+                    <a href="https://www.hikvision.com/es-la/" class="text-decoration-none" target="_blank">Más
+                        información acá</a>
+                </section>
+                <section class="col-sm">
+                    <h4 class="text-uppercase">Ezviz</h4>
+                    <p>Utilizamos los mejores productos del mercado para nuestros mejores clientes.</p>
+                    <a href="https://www.ezviz.com/la/category/security-wifi-cameras" class="text-decoration-none"
+                        target="_blank">Más información acá</a>
+                </section>
+                <section class="col-sm">
+                    <h4 class="text-uppercase">Dahua</h4>
+                    <p>Utilizamos los mejores productos del mercado para nuestros mejores clientes.</p>
+                    <a href="https://www.dahuasecurity.com/la/Products" class="text-decoration-none" target="_blank">Más
+                        información acá</a>
+                </section>
+            </div>
+
+
+            <div class="row pt-4 pb-5">
+
+                <section class="col-md d-flex">
+                    <img src="imagenes/img3.jpg" class="img-fluid rounded-5" alt="foto3">
+                </section>
+
+                <section class="col-md-5 d-flex flex-column justify-content-start align-items-start">
+                    <div class="ms-5 mt-5">
+                        <h2>Quiénes Somos</h2>
+                        <p> Somos una pequeña empresa dedicada a instalar CCTV, cableado estructurado, ampliaciones de
+                            sistemas de WIFI, conectividad, desarrollo de redes y alarmas de incendio.</p>
+                        <a href="mailto:eugenio.bug@gmail.com" class="col-md-5 btn btn-dark">Contacto</a>
+                    </div>
+                </section>
+
+            </div>
+
+
+
+            <div class="container text-center align-items-center mt-5 mb-3 pt-5 pb-3">
+                <h3>Protección</h3>
+                <p>Ofrecemos mucho más que instalaciones. También proporcionamos seguridad y protección para tu negocio
+                    y para
+                    tu familia. Además, nos aseguramos de que se encuentren siempre conectados sin importar dónde estén.
+                </p>
+            </div>
+
+
+            <!-- librería lightbox -->
+            <div class="row py-5 justify-content-between">
+
+                <section class="col-md-5 d-flex flex-column">
+                    <a href="imagenes/img4.jpg" data-lightbox="galeria" data-title="Seguridad"> <img
+                            src="imagenes/img4.jpg" class="img-fluid img-4 rounded-5 rounded-top-0 rounded-start-0"
+                            alt="foto4">
+                    </a>
+                </section>
+
+                <section class="col-md-5 d-flex flex-column">
+                    <a href="imagenes/img5.jpg" data-lightbox="galeria" data-title="Seguridad"> <img
+                            src="imagenes/img5.jpg" class="img-fluid img-5 rounded-5 rounded-end-0 rounded-top-0"
+                            alt="foto5">
+                    </a>
+                </section>
+
+            </div> <!-- cierra librería lightbox -->
+
+
+        </div> <!-- cierra div del main -->
+
+
+
+
+    </main>
+
+
+    <footer>
+        <a href="#" class="ms-3 text-decoration-none"> Bug Soluciones SA </a>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <!--link Bootsptrap Java Screep-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!--link de código-->
+    <script src="js/codigo.js"></script>
+
+
+    <!-- js de lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+
+
+</body>
+
+</html>
